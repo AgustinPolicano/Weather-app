@@ -1,0 +1,27 @@
+.bg-home {
+  background-image: url('../../assets/imgs/Tropical-night.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+
+}
+
+.title-home{
+  color: white;
+  position: fixed;
+  padding-left: 5rem;
+  text-align: center;
+  top: 40%;
+}
+
+.subtitle-home{
+  padding-left: 3px;
+  max-width: 250px;
+
+}
+
+.button-edit{
+  width: 100%;
+}
