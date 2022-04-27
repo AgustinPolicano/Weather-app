@@ -24,3 +24,12 @@ code {
 .f48{
   font-size: 3rem;
 }
+
+.f64{
+  font-size: 4rem;
+}
+
+@font-face {
+  font-family: 'Filson';
+  src: url('./assets/fonts/FilsonProMedium.otf');
+}
