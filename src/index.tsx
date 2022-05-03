@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <NextUIProvider>
-      <FirstEntryHome></FirstEntryHome>
+      <App></App>
 
     </NextUIProvider>
   </React.StrictMode>

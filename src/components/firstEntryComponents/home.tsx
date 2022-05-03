@@ -5,6 +5,7 @@ import { Modal, Button, Text, Input, Row, Checkbox } from '@nextui-org/react';
 import ModalContext from '../../context/modalContext';
 import { useState } from 'react';
 import dashboardImg from "../../assets/imgs/Dashboard.svg"
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,9 +13,25 @@ function FirstEntryHome() {
     const [visible, setVisible] = useState(false);
     const handler = () => setVisible(true);
 
+
+
+    const [checkbox, setCheckHandler] = useState (false)
+
+    const handlerDialog = () => {
+        setVisible(true);
+        setCheckHandler(false)
+    }
+
+    const setChecKbox = () => {
+        if(checkbox === true){
+            setCheckHandler(false)
+        } else {
+            setCheckHandler(true)
+        }
+    }
+
     const closeHandler = () => {
         setVisible(false);
-        console.log("closed");
     };
     const text = "Almost before we knew it, we had left the ground.";
     return (
@@ -25,7 +42,7 @@ function FirstEntryHome() {
                 <div className='f16 subtitle-home'>
                     La aplicación que te muestra en tiempo real el clima segun tu ubicación
                 </div>
-                <Button color="secondary" auto className='button-edit' onClick={handler}>
+                <Button color="secondary" auto className='button-edit' onClick={handlerDialog} >
                     ¿Comenzamos?
                 </Button>
             </div>
@@ -44,28 +61,28 @@ function FirstEntryHome() {
             >
                 <Modal.Header>
                     <Text id="modal-title" size={18}>
-                        Welcome to
                         <Text b size={18}>
-                            NextUI
+                        Consentimiento de trackeo
                         </Text>
                     </Text>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>ANASHEEE</p>
-                    <Row justify="space-between">
+                    <p>Al proseguir aceptas que se trackee tu tu IPV4 para obtener los datos climaticos de tu zona </p>
+                    <Row justify="space-between" onClick={setChecKbox}>
                         <Checkbox>
-                            <Text size={14}>Remember me</Text>
+                            <Text size={14}>Aceptar</Text>
                         </Checkbox>
-                        <Text size={14}>Forgot password?</Text>
                     </Row>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button auto flat color="error" onClick={closeHandler}>
-                        Close
+                        Cerrar
                     </Button>
-                    <Button auto onClick={closeHandler}>
-                        Sign in
+                    <Link to="/weather">
+                    <Button auto onClick={closeHandler} disabled={!checkbox}>
+                        Comenzar
                     </Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
 
