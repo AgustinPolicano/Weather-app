@@ -1,0 +1,10 @@
+.bg-home-day{
+    background-image: url('../../assets/imgs/Mt.FujiJapan-day.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+
+  ;
+}
